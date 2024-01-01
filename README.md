@@ -1,6 +1,6 @@
 # SwiftMath
 
-Welcome to **SwiftMath**, a simple calculator web application designed for a fast and seamless arithmetic operations. Whether you're a student, professional, or anyone in need of quick and precise calculations, SwiftMath is your go-to tool for hassle-free math.
+Welcome to **SwiftMath**, a simple calculator web application designed for fast and seamless arithmetic operations. Whether you're a student, professional, or anyone in need of quick and precise calculations, SwiftMath is your go-to tool for hassle-free math.
 
 ## Key Features
 - **Swift and Intuitive:** SwiftMath provides a sleek and intuitive interface, making complex calculations as easy as 1-2-3.
