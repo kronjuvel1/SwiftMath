@@ -1,0 +1,120 @@
+:root {
+    --text: #121317;
+    --background: #030408;
+    --background2: #2C2163;
+    --background3: #F8F9FC;
+    --primary: #443BB0;
+    --secondary: #A6AAD8;
+    --accent: #896ACD;    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+}
+
+button {
+    background-color: var(--secondary);
+    padding: 1em;
+    border: none;
+}
+
+#calculator-body {
+    height: 60vh;
+    width: 40vh;
+    padding: 1rem;
+    border-radius: 5px;
+    gap: 2px;
+
+    background-color: var(--background2);
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#display {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    height: 30%;
+    width: 100%;
+    padding: 0 10px;
+    border: .1rem solid var(--accent);
+    font-size: xx-large;
+    background-color: var(--background3);
+    color: var(--text);
+}
+
+#calculator-buttons {
+    display: flex;
+    height: 70%;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    gap: 1px;
+}
+
+.button {
+    flex: 0 0 calc(33%);
+}
+
+.button.number, #addDecimalPoint, #changeSign, .button.button.getOperators {
+    border-radius: 5px;
+}
+
+.button.number {
+   flex-grow: 1;
+}
+
+.operators-group {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 1px;
+    margin-left: 1px;
+}
+
+.button.getOperators {
+    flex: 1;
+    width: 100%;
+}
+
+.resultBtn-clearBtn-group {
+    display: flex;
+}
+
+.button.functions, #resultBtn {
+    flex: 1;
+    border-radius: 5px;
+}
+
+#resultBtn {
+    flex-grow: 6;
+    width: 100%;
+    background-color: var(--accent);
+}
+
+#backspaceBtn {
+    margin-left: 1px;
+}

@@ -19,6 +19,12 @@ function clearCalculator() {
 
 function updateDisplay() {
     displayElement.textContent = `${firstNumber} ${currentOperator} ${secondNumber}`;
+
+    if (content.length > 10) {
+        displayElement.style.fontSize = "1.5rem";
+    } else {
+        displayElement.style.fontSize = "xx-large";
+    }
 }
 
 const add = (num1, num2) => num1 + num2;

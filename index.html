@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
     <script src="./script.js" defer></script>
 </head>
+
 <body>
     <main id="calculator-body">
         <div id="display" aria-live="assertive" aria-atomic="true" role="textbox" tabindex="0"></div>
-        
-        <fieldset class="button-group">
-            <button type="button" class="button number" aria-labelledby="label1">1</button>
-            <button type="button" class="button number" aria-labelledby="label2">2</button>
-            <button type="button" class="button number" aria-labelledby="label3">3</button>
-            <button type="button" class="button number" aria-labelledby="label4">4</button>
-            <button type="button" class="button number" aria-labelledby="label5">5</button>
-            <button type="button" class="button number" aria-labelledby="label6">6</button>
-            <button type="button" class="button number" aria-labelledby="label7">7</button>
-            <button type="button" class="button number" aria-labelledby="label8">8</button>
-            <button type="button" class="button number" aria-labelledby="label9">9</button>
-            <button type="button" class="button number" aria-labelledby="label0">0</button>
-            <button type="button" class="button" id="addDecimalPoint" aria-label="Decimal Point (Dot)">.</button>
-            <button type="button" class="button" id="changeSign" aria-label="Change Sign">+/-</button>
-        </fieldset>
-        
-        <section class="operators-group">
-            <button type="button" class="button getOperators" aria-label="Add" data-operator="+">+</button>
-            <button type="button" class="button getOperators" aria-label="Subtract" data-operator="-">-</button>
-            <button type="button" class="button getOperators" aria-label="Multiply" data-operator="×">×</button>
-            <button type="button" class="button getOperators" aria-label="Divide" data-operator="÷">÷</button>
-        </section>
-                
         <section class="resultBtn-clearBtn-group">
-            <button type="button" id="resultBtn" aria-label="Equals">=</button>
-            <button type="button" id="clearBtn" aria-label="All Clear (AC)">AC</button>
-            <button type="button" id="backspaceBtn" aria-label="Backspace">←</button>
+            <button type="button" class="button functions" id="clearBtn" aria-label="All Clear (AC)">AC</button>
+            <button type="button" class="button functions" id="backspaceBtn" aria-label="Backspace">←</button>
         </section>
+        <div id="calculator-buttons">
+            <fieldset class="button-group">
+                <button type="button" class="button number" aria-labelledby="label7">7</button>
+                <button type="button" class="button number" aria-labelledby="label8">8</button>
+                <button type="button" class="button number" aria-labelledby="label9">9</button>
+                <button type="button" class="button number" aria-labelledby="label4">4</button>
+                <button type="button" class="button number" aria-labelledby="label5">5</button>
+                <button type="button" class="button number" aria-labelledby="label6">6</button>
+                <button type="button" class="button number" aria-labelledby="label1">1</button>
+                <button type="button" class="button number" aria-labelledby="label2">2</button>
+                <button type="button" class="button number" aria-labelledby="label3">3</button>
+                <button type="button" class="button" id="changeSign" aria-label="Change Sign">+/-</button>
+                <button type="button" class="button number" aria-labelledby="label0">0</button>
+                <button type="button" class="button" id="addDecimalPoint" aria-label="Decimal Point (Dot)">.</button>
+            </fieldset>
+            <section class="operators-group">
+                <button type="button" class="button getOperators" aria-label="Add" data-operator="+">+</button>
+                <button type="button" class="button getOperators" aria-label="Subtract" data-operator="-">-</button>
+                <button type="button" class="button getOperators" aria-label="Multiply" data-operator="x">x</button>
+                <button type="button" class="button getOperators" aria-label="Divide" data-operator="÷">÷</button>
+                <button type="button" class="button functions" id="resultBtn" aria-label="Equals">=</button>
+            </section>
+
+        </div>
     </main>
 </body>
+
 </html>
