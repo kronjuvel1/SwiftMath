@@ -1,6 +1,6 @@
 const numberButtons = document.querySelectorAll(".button.number");
 const operatorButtons = document.querySelectorAll(".button.getOperators");
-const decimalPointButton = document.querySelector("addDecimalPoint");
+const decimalPointButton = document.querySelector("#addDecimalPoint");
 const resultButton = document.querySelector("#resultBtn");
 const clearButton = document.querySelector("#clearBtn");
 const backspaceButton = document.querySelector("#backspaceBtn");
@@ -10,22 +10,6 @@ let firstNumber = "";
 let secondNumber = "";
 let currentOperator = "";
 let isError = false;
-
-function clearCalculator() {
-    firstNumber = "";
-    secondNumber = "";
-    currentOperator = "";
-}
-
-function updateDisplay() {
-    displayElement.textContent = `${firstNumber} ${currentOperator} ${secondNumber}`;
-
-    if (content.length > 10) {
-        displayElement.style.fontSize = "1.5rem";
-    } else {
-        displayElement.style.fontSize = "xx-large";
-    }
-}
 
 const add = (num1, num2) => num1 + num2;
 const subtract = (num1, num2) => num1 - num2;
@@ -118,3 +102,19 @@ backspaceButton.addEventListener("click", function () {
     }
     updateDisplay();
 });
+
+function clearCalculator() {
+    firstNumber = "";
+    secondNumber = "";
+    currentOperator = "";
+}
+
+function updateDisplay() {
+    displayElement.textContent = `${firstNumber} ${currentOperator} ${secondNumber}`;
+
+    if (displayElement.length > 10) {
+        displayElement.style.fontSize = "1.5rem";
+    } else {
+        displayElement.style.fontSize = "xx-large";
+    }
+}
