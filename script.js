@@ -34,7 +34,7 @@ const operate = (num1, num2, operator) => {
             return add(parsedNumber1, parsedNumber2);
         case "-":
             return subtract(parsedNumber1, parsedNumber2);
-        case "×":
+        case "x":
             return multiply(parsedNumber1, parsedNumber2);
         case "÷":
             return divide(parsedNumber1, parsedNumber2);
@@ -110,9 +110,10 @@ function clearCalculator() {
 }
 
 function updateDisplay() {
-    displayElement.textContent = `${firstNumber} ${currentOperator} ${secondNumber}`;
+    const displayText = `${firstNumber} ${currentOperator} ${secondNumber}`;
+    displayElement.textContent = displayText;
 
-    if (displayElement.length > 10) {
+    if (displayText.length > 10) {
         displayElement.style.fontSize = "1.5rem";
     } else {
         displayElement.style.fontSize = "xx-large";
