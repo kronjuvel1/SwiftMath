@@ -10,28 +10,24 @@
 
 * {
     font-family: 'Source Sans 3', sans-serif;
-    font-size: large;
+    font-size: 1.1rem;
     color: var(--text);
 }
 
-html {
-    height: 100vh;
-    background-color: var(--background2);
-}
-
 body {
+    height: 100vh;
     margin: 0;
 }
 
 .main-container {
-    height: 97vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--background);
 }
 
-footer > h3 {
+footer>h3 {
     background-color: var(--background2);
     color: var(--text);
     margin: 0;
@@ -44,7 +40,7 @@ button {
     padding: 1em;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: linear;
 }
 
 button:hover {
@@ -59,12 +55,11 @@ button:active {
     height: 70vh;
     width: 50vh;
     padding: 1rem;
-    border-radius: 1;
+    border-radius: 5px;
 
     background-color: var(--background2);
     display: flex;
     flex-direction: column;
-    align-self: center;
 }
 
 #display {
@@ -72,12 +67,13 @@ button:active {
     align-items: center;
     justify-content: flex-end;
     min-height: 30%;
-    max-width: 100%;
     padding: 0 10px;
     outline: .1rem solid var(--background2);
     font-size: 1rem;
     color: var(--background2);
     background-color: var(--primary);
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 #calculator-buttons {
@@ -126,5 +122,9 @@ button:active {
 
 #resultBtn {
     background-color: var(--accent);
-    flex-grow: 4;
+    flex-grow: 2;
+}
+
+#resultBtn:hover {
+    mix-blend-mode: difference;
 }
