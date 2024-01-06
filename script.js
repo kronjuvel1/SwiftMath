@@ -4,6 +4,7 @@ const decimalPointButton = document.querySelector("#addDecimalPoint");
 const resultButton = document.querySelector("#resultBtn");
 const clearButton = document.querySelector("#clearBtn");
 const backspaceButton = document.querySelector("#backspaceBtn");
+const changeSignButton = document.querySelector("#changeSignBtn");
 const displayElement = document.querySelector("#display");
 
 let firstNumber = "";
@@ -43,6 +44,58 @@ const operate = (num1, num2, operator) => {
     }
 };
 
+document.addEventListener("keydown", function (event) {
+    const key = event.key;
+
+    if (!isNaN(key) || key === ".") {
+        if (isError) {
+            clearCalculator();
+            isError = false;
+        }
+        if (currentOperator) {
+            secondNumber += key;
+        } else {
+            firstNumber += key;
+        }
+        updateDisplay();
+    }
+
+    if (["+", "-", "*", "/"].includes(key)) {
+        if (firstNumber !== "" && secondNumber !== "" && currentOperator !== "") {
+            const result = operate(firstNumber, secondNumber, currentOperator);
+            displayElement.textContent = result;
+            firstNumber = result.toString();
+            secondNumber = "";
+        }
+        currentOperator = key;
+        updateDisplay();
+    }
+
+    if (key === "Enter") {
+        if (currentOperator && secondNumber !== "") {
+            const result = operate(firstNumber, secondNumber, currentOperator);
+            displayElement.textContent = result;
+            firstNumber = result.toString();
+            secondNumber = "";
+            currentOperator = "";
+        }
+    }
+
+    if (key === "Backspace") {
+        if (currentOperator) {
+            secondNumber = secondNumber.slice(0, -1);
+        } else {
+            firstNumber = firstNumber.slice(0, -1);
+        }
+        updateDisplay();
+    }
+
+    if (key === "Escape") {
+        clearCalculator();
+        updateDisplay();
+    }
+});
+
 numberButtons.forEach((button) => {
     button.addEventListener("click", function () {
         const clickedNumber = button.textContent.trim();
@@ -61,7 +114,15 @@ numberButtons.forEach((button) => {
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", function () {
-        currentOperator = button.dataset.operator;
+        if (firstNumber !== "" && secondNumber !== "" && currentOperator !== "") {
+            const result = operate(firstNumber, secondNumber, currentOperator);
+            displayElement.textContent = result;
+            firstNumber = result.toString();
+            secondNumber = "";
+            currentOperator = button.dataset.operator;
+        } else if (firstNumber !== "" && !currentOperator) {
+            currentOperator = button.dataset.operator;
+        }
         updateDisplay();
     });
 });
@@ -103,10 +164,20 @@ backspaceButton.addEventListener("click", function () {
     updateDisplay();
 });
 
+changeSignButton.addEventListener("click", function () {
+    if (currentOperator) {
+        secondNumber = (parseFloat(secondNumber) * -1).toString();
+    } else {
+        firstNumber = (parseFloat(firstNumber) * -1).toString();
+    }
+    updateDisplay();
+});
+
 function clearCalculator() {
     firstNumber = "";
     secondNumber = "";
     currentOperator = "";
+    isError = false;
 }
 
 function updateDisplay() {

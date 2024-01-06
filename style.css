@@ -27,14 +27,6 @@ body {
     background-color: var(--background);
 }
 
-footer>h3 {
-    background-color: var(--background2);
-    color: var(--text);
-    margin: 0;
-    max-height: 10%;
-    text-align: center;
-}
-
 button {
     background-color: var(--secondary);
     padding: 1em;
@@ -73,6 +65,7 @@ button:active {
     color: var(--background2);
     background-color: var(--primary);
     overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
@@ -85,6 +78,7 @@ button:active {
 .button-group {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
     border: 0;
@@ -93,13 +87,13 @@ button:active {
 .button {
     display: flex;
     justify-content: center;
-    flex-basis: calc(33% + 1px);
+    flex-basis: calc(33.33% + 0.001%);
 }
 
 .button.number,
 .button.functions,
 .button.getOperators,
-#changeSign,
+#changeSignBtn,
 #addDecimalPoint {
     align-items: center;
 }
